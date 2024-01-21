@@ -29,7 +29,7 @@ const requestData = {
         { type: 'text', text: 'Return JSON document with data. Only return JSON not other text' },
         {
           type: 'image',
-          image: { base64: encodeImage(imageLocal) }
+          content: { base64: encodeImage(imageLocal) } // Fixed key name to 'content'
         }
       ],
     }
@@ -37,7 +37,7 @@ const requestData = {
   max_tokens: 500,
 };
 
-const apiKey = 'YOUR_OPENAI_API_KEY'; // Replace with your OpenAI API key
+const apiKey = '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'; // Replace with your OpenAI API key
 
 axios.post('https://api.openai.com/v1/chat/completions', requestData, {
   headers: {
@@ -58,50 +58,3 @@ axios.post('https://api.openai.com/v1/chat/completions', requestData, {
   .catch(error => {
     console.error('Error:', error.message);
   });
-
-// const axios = require('axios');
-// const fs = require('fs');
-// const path = require('path');
-
-// const imageLocal = './ocrtest1.png';
-// // const imageBase64 = encodeImage(imageLocal); // You can implement this function if needed
-// const imageUrl = '';
-
-// // Function to encode the image (you may need to implement this)
-// // function encodeImage(imagePath) { /* Implement image encoding logic */ }
-
-// const requestData = {
-//   messages: [
-//     {
-//       role: 'user',
-//       content: [
-//         { type: 'text', text: 'Return JSON document with data. Only return JSON not other text' },
-//         {
-//           type: 'image',
-//           image: { base64: encodeImage(imageLocal) }
-//         }
-//       ],
-//     }
-//   ],
-//   max_tokens: 500,
-// };
-
-// axios.post('https://api.openai.com/v1/chat/completions', requestData, {
-//   headers: {
-//     'Content-Type': 'application/json',
-//     'Authorization': 'Bearer YOUR_OPENAI_API_KEY', // Replace with your OpenAI API key
-//   },
-// })
-//   .then(response => {
-//     const jsonString = response.data.choices[0].message.content;
-//     const jsonContent = JSON.parse(jsonString);
-
-//     const filenameWithoutExtension = path.basename(new URL(imageUrl).pathname, path.extname(imageUrl));
-//     const jsonFilename = `${filenameWithoutExtension}.json`;
-
-//     fs.writeFileSync(`./Data/${jsonFilename}`, JSON.stringify(jsonContent, null, 4));
-//     console.log(`JSON data saved to ${jsonFilename}`);
-//   })
-//   .catch(error => {
-//     console.error('Error:', error.message);
-//   });
