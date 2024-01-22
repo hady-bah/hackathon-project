@@ -1,7 +1,7 @@
 const fs = require('fs');
 const T = require('tesseract.js');
 
-T.recognize('./uploads/ocrtest1.png', 'eng') // { logger: e => console.log(e) } to track time
+T.recognize('./uploads/ocrtest5.png', 'eng') // { logger: e => console.log(e) } to track time
   .then((result) => {
     console.log(result.data.text);
 

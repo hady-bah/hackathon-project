@@ -1,23 +1,86 @@
 [
   {
-    "code": "CSCI 274",
-    "name": "Computer Architecture",
-    "credits": 3,
-    "grade": "A",
+    "code": "CSC 326",
+    "name": "Data Structures",
+    "credits": 0,
+    "grade": "F",
     "key": 1
   },
   {
-    "code": "MAT 151",
-    "name": "Calculus I",
-    "credits": 4,
-    "grade": "A",
+    "code": "MTH 231",
+    "name": "Anal Geom-Calc I",
+    "credits": 0,
+    "grade": "F",
     "key": 2
   },
   {
-    "code": "SPA 101",
-    "name": "Introductory Spanish I",
+    "code": "ENG 111",
+    "name": "Intro College Writng",
     "credits": 3,
     "grade": "A",
     "key": 3
+  },
+  {
+    "code": "PHY 120",
+    "name": "General Physics",
+    "credits": 3,
+    "grade": "B+",
+    "key": 4
+  },
+  {
+    "code": "GEO 115",
+    "name": "Fundamentals of Physic Geology 0.00 W Contact Hours: 4.00\nReq Designation: Required Core - Life and Physical Sciences Instructor: Anshel Gorokhovsky\nContact Hours: 3.00 PHY 121 General Physics I Laboratory",
+    "credits": 1,
+    "grade": "A-",
+    "key": 5
+  },
+  {
+    "code": "GEO 116",
+    "name": "Fundamentals of Phy Geo Lab 000 W Course Attributes: Course May Satisfy College Option - See Advisor\nContact Hours: 2.00 ZERO Textbook Cost\nCourse Attributes: Course May Satisfy College Option - Sec Advisor Instructor: Negin Moharrami Allafi\nInstructor: Marlena Kozyra POL",
+    "credits": 1,
+    "grade": "A",
+    "key": 6
+  },
+  {
+    "code": "MTH 123",
+    "name": "Coll Alg & Trig",
+    "credits": 4,
+    "grade": "B+",
+    "key": 7
+  },
+  {
+    "code": "COM 100",
+    "name": "Introduction to Media",
+    "credits": 3,
+    "grade": "A",
+    "key": 8
+  },
+  {
+    "code": "CSC 245",
+    "name": "Introduction to Data Science",
+    "credits": 3,
+    "grade": "A-",
+    "key": 9
+  },
+  {
+    "code": "ENG 151",
+    "name": "College Writing",
+    "credits": 3,
+    "grade": "B+",
+    "key": 10
+  },
+  {
+    "code": "CSC 326",
+    "name": "Data Structures",
+    "credits": 4,
+    "grade": "B+",
+    "key": 11
+  },
+  {
+    "code": "MTH 231",
+    "name": "Anal Geom-Cale I 000 W\nMTH 130 Pre-Calculus Mathematics",
+    "credits": 3,
+    "grade": "D",
+    "key": 12
   }
 ]

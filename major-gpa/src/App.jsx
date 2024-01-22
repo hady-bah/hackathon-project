@@ -31,13 +31,29 @@ function App() {
     // Retrieve exact grades and credits from the JSON data for the transferred courses
     const updatedTransferredCourses = mockData.filter(course => targetKeys.includes(course.key));
     setTransferredCourses(updatedTransferredCourses);
-
+  
     // Calculate GPA based on the exact grade and credit information from transferred courses
-    const totalCredits = updatedTransferredCourses.reduce((sum, course) => sum + course.credits, 0);
-    const totalGradePoints = updatedTransferredCourses.reduce((sum, course) => sum + convertGradeToPoints(course.grade), 0);
-    const calculatedGPA = totalGradePoints / totalCredits;
+    let totalGradePoints = 0;
+    let totalCredits = 0;
+  
+    updatedTransferredCourses.forEach(course => {
+      const { credits, grade } = course;
+      const gradePoints = convertGradeToPoints(grade);
+  
+      // If credits is 0, treat it as a special case (e.g., weight of an F)
+      if (credits === 0) {
+        totalGradePoints += 0; // Weight of an F
+        totalCredits += 1; // Treat as a course with 1 credit (adjust as needed)
+      } else {
+        totalGradePoints += credits * gradePoints;
+        totalCredits += credits;
+      }
+    });
+  
+    const calculatedGPA = totalCredits !== 0 ? totalGradePoints / totalCredits : 0;
     setCalculatedGPA(calculatedGPA.toFixed(2));
   };
+  
 
   const convertGradeToPoints = (grade) => {
     switch (grade) {
