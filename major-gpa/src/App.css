@@ -35,7 +35,8 @@
 }
 
 .center-directions{
-  margin-left: 592px;
+  display: flex;
+  justify-content: center;
 }
 
 h1{
