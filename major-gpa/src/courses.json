@@ -1,86 +1,100 @@
 [
   {
-    "code": "CSC 326",
-    "name": "Data Structures",
-    "credits": 0,
-    "grade": "F",
+    "code": "MAT 141",
+    "name": "Pre-Caleulus I SOE\nReq Designation: Required Core - Mathematical&QuantitativeReasoning\nContact Hours: 3.00\nOther Institutions Attended: Course Attributes: Sd\nInstructor: Roberta Aronoff\nRepeated: Include Credit & GPA\nP— SCI 114 Prin Forensic Sci",
+    "credits": 3,
+    "grade": "A",
     "key": 1
   },
   {
-    "code": "MTH 231",
-    "name": "Anal Geom-Calc I",
-    "credits": 0,
-    "grade": "F",
+    "code": "ENG 201",
+    "name": "Comp II Discip Inves",
+    "credits": 3,
+    "grade": "A",
     "key": 2
   },
   {
-    "code": "ENG 111",
-    "name": "Intro College Writng",
+    "code": "CSCI 272",
+    "name": "Object-Oriented Programming",
     "credits": 3,
     "grade": "A",
     "key": 3
   },
   {
-    "code": "PHY 120",
-    "name": "General Physics",
+    "code": "CSCI 274",
+    "name": "‘Computer Architecture",
     "credits": 3,
-    "grade": "B+",
+    "grade": "A",
     "key": 4
   },
   {
-    "code": "GEO 115",
-    "name": "Fundamentals of Physic Geology 0.00 W Contact Hours: 4.00\nReq Designation: Required Core - Life and Physical Sciences Instructor: Anshel Gorokhovsky\nContact Hours: 3.00 PHY 121 General Physics I Laboratory",
-    "credits": 1,
-    "grade": "A-",
+    "code": "LIT 233",
+    "name": "American Stories",
+    "credits": 3,
+    "grade": "B+",
     "key": 5
   },
   {
-    "code": "GEO 116",
-    "name": "Fundamentals of Phy Geo Lab 000 W Course Attributes: Course May Satisfy College Option - See Advisor\nContact Hours: 2.00 ZERO Textbook Cost\nCourse Attributes: Course May Satisfy College Option - Sec Advisor Instructor: Negin Moharrami Allafi\nInstructor: Marlena Kozyra POL",
-    "credits": 1,
+    "code": "MAT 151",
+    "name": "Calculus I",
+    "credits": 4,
     "grade": "A",
     "key": 6
   },
   {
-    "code": "MTH 123",
-    "name": "Coll Alg & Trig",
-    "credits": 4,
-    "grade": "B+",
+    "code": "MAT 141",
+    "name": "Pre-Calculus",
+    "credits": 0,
+    "grade": "F",
     "key": 7
   },
   {
-    "code": "COM 100",
-    "name": "Introduction to Media",
+    "code": "PHI 216",
+    "name": "Ethics & Information Tech",
     "credits": 3,
     "grade": "A",
     "key": 8
   },
   {
-    "code": "CSC 245",
-    "name": "Introduction to Data Science",
+    "code": "SPA 101",
+    "name": "Introductory Spanish I",
     "credits": 3,
-    "grade": "A-",
+    "grade": "A",
     "key": 9
   },
   {
-    "code": "ENG 151",
-    "name": "College Writing",
+    "code": "CSCI 373",
+    "name": "Advanced Data Structures",
     "credits": 3,
-    "grade": "B+",
+    "grade": "A-",
     "key": 10
   },
   {
-    "code": "CSC 326",
-    "name": "Data Structures",
-    "credits": 4,
+    "code": "ANT 101",
+    "name": "Intro to Cultural Anthropology",
+    "credits": 3,
     "grade": "B+",
     "key": 11
   },
   {
-    "code": "MTH 231",
-    "name": "Anal Geom-Cale I 000 W\nMTH 130 Pre-Calculus Mathematics",
+    "code": "LAW 202",
+    "name": "Law and Evidence",
     "credits": 3,
-    "grade": "D",
+    "grade": "A",
     "key": 12
+  },
+  {
+    "code": "MAT 204",
+    "name": "Discrete Structures.",
+    "credits": 3,
+    "grade": "B-",
+    "key": 13
+  },
+  {
+    "code": "CSCI 271",
+    "name": "Intro Comput & Prog.",
+    "credits": 3,
+    "grade": "A",
+    "key": 14
   }
 ]

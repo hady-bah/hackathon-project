@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import mockData from './courses.json';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import CountUp from 'react-countup';
 import { UploadOutlined, LeftSquareTwoTone, RightSquareTwoTone } from '@ant-design/icons'; 
 
-import {Divider, Button, message, Upload, Transfer, Tag} from 'antd'
+import {Divider, Button, message, Upload, Transfer, Tag, Col, Statistic} from 'antd'
 
 
 function App() {
@@ -15,6 +16,12 @@ function App() {
   const [targetKeys, setTargetKeys] = useState([]);
   const [transferredCourses, setTransferredCourses] = useState([]);
   const [calculatedGPA, setCalculatedGPA] = useState(null);
+
+  const formatter = (value) => (
+    <span style={{fontSize: "80px" }}>
+      <CountUp end={value} separator="," decimals={2}/>
+    </span>
+  );
 
   const filterOption = (inputValue, option) => {
     const optionText = `${option.code} - ${option.credits} - ${option.grade}`.toLowerCase();
@@ -103,6 +110,22 @@ function App() {
     },
   }; 
 
+  const [loadings, setLoadings] = useState([]);
+  const enterLoading = (index) => {
+    setLoadings((prevLoadings) => {
+      const newLoadings = [...prevLoadings];
+      newLoadings[index] = true;
+      return newLoadings;
+    });
+    setTimeout(() => {
+      setLoadings((prevLoadings) => {
+        const newLoadings = [...prevLoadings];
+        newLoadings[index] = false;
+        return newLoadings;
+      });
+    }, 10000);
+  };
+
 
 
   return (
@@ -123,8 +146,13 @@ function App() {
       </div>
       <div className='center-title'>
       <Upload {...props} maxCount={1}>
-      <Button icon={<UploadOutlined />}>Upload png only</Button>
+      <Button type="primary" icon={<UploadOutlined />}>Upload PNG</Button>
       </Upload>
+      </div>
+      <div className='center-title'>
+      <Button loading={loadings[0]} onClick={() => enterLoading(0)}>
+          Send
+        </Button>
       </div>
       
       <Divider/>
@@ -174,9 +202,14 @@ function App() {
 
       <div className='center-title'>
         {calculatedGPA !== null && (
-          <p style={{ marginTop: '10px' }}>
-            <strong>Calculated Major GPA:</strong> {calculatedGPA}
-          </p>
+          <Col>
+          <Statistic
+            title=""
+            value={calculatedGPA}
+            precision={2}
+            formatter={formatter}
+          />
+        </Col>
         )}
       </div>
       <br/>

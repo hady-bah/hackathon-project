@@ -1,0 +1,100 @@
+[
+  {
+    "code": "MAT 141",
+    "name": "Pre-Caleulus I SOE\nReq Designation: Required Core - Mathematical&QuantitativeReasoning\nContact Hours: 3.00\nOther Institutions Attended: Course Attributes: Sd\nInstructor: Roberta Aronoff\nRepeated: Include Credit & GPA\nP— SCI 114 Prin Forensic Sci",
+    "credits": 3,
+    "grade": "A",
+    "key": 1
+  },
+  {
+    "code": "ENG 201",
+    "name": "Comp II Discip Inves",
+    "credits": 3,
+    "grade": "A",
+    "key": 2
+  },
+  {
+    "code": "CSCI 272",
+    "name": "Object-Oriented Programming",
+    "credits": 3,
+    "grade": "A",
+    "key": 3
+  },
+  {
+    "code": "CSCI 274",
+    "name": "‘Computer Architecture",
+    "credits": 3,
+    "grade": "A",
+    "key": 4
+  },
+  {
+    "code": "LIT 233",
+    "name": "American Stories",
+    "credits": 3,
+    "grade": "B+",
+    "key": 5
+  },
+  {
+    "code": "MAT 151",
+    "name": "Calculus I",
+    "credits": 4,
+    "grade": "A",
+    "key": 6
+  },
+  {
+    "code": "MAT 141",
+    "name": "Pre-Calculus",
+    "credits": 0,
+    "grade": "F",
+    "key": 7
+  },
+  {
+    "code": "PHI 216",
+    "name": "Ethics & Information Tech",
+    "credits": 3,
+    "grade": "A",
+    "key": 8
+  },
+  {
+    "code": "SPA 101",
+    "name": "Introductory Spanish I",
+    "credits": 3,
+    "grade": "A",
+    "key": 9
+  },
+  {
+    "code": "CSCI 373",
+    "name": "Advanced Data Structures",
+    "credits": 3,
+    "grade": "A-",
+    "key": 10
+  },
+  {
+    "code": "ANT 101",
+    "name": "Intro to Cultural Anthropology",
+    "credits": 3,
+    "grade": "B+",
+    "key": 11
+  },
+  {
+    "code": "LAW 202",
+    "name": "Law and Evidence",
+    "credits": 3,
+    "grade": "A",
+    "key": 12
+  },
+  {
+    "code": "MAT 204",
+    "name": "Discrete Structures.",
+    "credits": 3,
+    "grade": "B-",
+    "key": 13
+  },
+  {
+    "code": "CSCI 271",
+    "name": "Intro Comput & Prog.",
+    "credits": 3,
+    "grade": "A",
+    "key": 14
+  }
+]
