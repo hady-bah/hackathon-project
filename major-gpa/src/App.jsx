@@ -7,7 +7,7 @@ import './App.css';
 import CountUp from 'react-countup';
 import { UploadOutlined, LeftSquareTwoTone, RightSquareTwoTone } from '@ant-design/icons'; 
 
-import {Divider, Button, message, Upload, Transfer, Tag, Col, Statistic} from 'antd'
+import {Divider, Button, message, Upload, Transfer, Tag, Col, Statistic, FloatButton} from 'antd'
 
 
 function App() {
@@ -164,9 +164,6 @@ function App() {
       <div className='center-title'>
         <p><strong>Transfer all major related courses</strong></p>
       </div>
-      <div className='center-title'>
-        <p>Add below if needed or innacurate</p>
-      </div>
       <div className='center-directions'>
       <p>
       <span><LeftSquareTwoTone /> Courses | </span>
@@ -212,9 +209,7 @@ function App() {
         </Col>
         )}
       </div>
-      <br/>
-      <br/>
-      <br/>
+      <FloatButton.BackTop />
     </>
   )
 }
