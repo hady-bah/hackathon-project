@@ -1,80 +1,50 @@
 const T = require("tesseract.js");
+const fs = require('fs');
 
-T.recognize('./uploads/ocrtest3.png', 'eng', { logger: e => console.log(e) }) 
+T.recognize('./uploads/ocrtest1.png', 'eng')//{ logger: e => console.log(e) } to track time 
  .then(result => {
 
-  let text = result.data.text;
-  console.log(text);
+  console.log(result.data.text);
 
-  // Standardize text
-  text = text.toLowerCase();
-  text = text.replace(/\s\s+/g, ' '); 
+  let text = result.data.text.toLowerCase(); 
   
-  // Split into lines
+  text = text.replace(/\s\s+/g, ' ');
+  
   const lines = text.split('\n');
 
-  // Extract courses
-  const courses = [];  
-  let currentCourse;
+  const courses = [];
 
   lines.forEach(line => {
-
-    // Match course code 
-    if (line.match(/([a-z]{3}\s\d{3})/)) {
-      currentCourse = { 
-        code: line.match(/([a-z]{3}\s\d{3})/)[1]
-      };
-      courses.push(currentCourse);
+  
+    let course = {};
+  
+    if (line.match(/([a-z]{3}\s\d{3})/i)) { 
+      course.code = line.match(/([a-z]{3}\s\d{3})/i)[1];
+  
+    } else if (line.match(/(\d+\.\d+)\s([ABCDF]\+?)/)) {
+      course.credits = parseFloat(line.match(/(\d+\.\d+)\s([ABCDF]\+?)/)[1]);  
+      course.grade = line.match(/(\d+\.\d+)\s([ABCDF]\+?)/)[2];
+    
+    } else if (line.match(/grade/i)) {
+      course.grade = line.match(/grade:\s([ABCDF]\+?)/i)[1];
+    
+    } else if (line.match(/credits/i)) { 
+      course.credits = parseFloat(line.match(/credits:\s(\d+\.\d+)/i)[1]);
     }
-
-    // Other course properties  
-    if (line.includes('grade:')) {
-      currentCourse.grade = line.split('grade:')[1].trim();
-    } 
-
+  
+    if (course.code) {  
+      courses.push(course);
+    }
+  
   });
-
-  console.log(courses);
+  
+  const jsonData = JSON.stringify(courses, null, 2);
+  
+  fs.writeFileSync('courses.json', jsonData);
 
  })
- .catch(error => {
-   console.log(error);  
+ .catch(err => {
+  console.log(err); 
  });
-// const T = require("tesseract.js")//importing tesseract
 
 
-// T.recognize('./uploads/ocrtest3.png', 'eng', { logger: e => console.log(e) })//path to image, language, log to show progress
-//     .then(out => {
-//       const recognizedText = out.data.text;//stores recognized text into a variable
-//       console.log(recognizedText);//outputs recognized text
-
-//      // Split the text into lines
-//     const lines = recognizedText.split('\n');
-
-//     // Initialize variables to store extracted information
-//     let currentCourse = {};
-
-//     // Iterate through each line
-//     for (const line of lines) {
-//     // Check if the line contains course code, name, credits, and grade
-//     const courseMatch = line.match(/^([A-Z]+\s\d+)\s(.+?)\s(\d+\.\d+|\d+)\s([A-F][\+-]?|\d+)$/);
-
-//     if (courseMatch) {
-//         // If a match is found, store the information in the currentCourse object
-//         currentCourse = {
-//         code: courseMatch[1],
-//         name: courseMatch[2],
-//         credits: courseMatch[3],
-//         grade: courseMatch[4],
-//         };
-
-//         // Output or process the extracted information as needed
-//         console.log('Course Information:', currentCourse);
-//     } else {
-//         // Handle other lines or information not matching the course pattern
-//         // You can add more conditions or patterns as needed
-//     }
-//     }
-
-//         })
-//     .catch(error => console.error(error));
