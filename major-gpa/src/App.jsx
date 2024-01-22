@@ -16,8 +16,11 @@ function App() {
   const [transferredCourses, setTransferredCourses] = useState([]);
   const [calculatedGPA, setCalculatedGPA] = useState(null);
 
-  const filterOption = (inputValue, option) =>
-    option.description.indexOf(inputValue) > -1 || option.title.indexOf(inputValue) > -1;
+  const filterOption = (inputValue, option) => {
+    const optionText = `${option.code} - ${option.credits} - ${option.grade}`.toLowerCase();
+    const inputValueLower = inputValue.toLowerCase();
+    return optionText.indexOf(inputValueLower) > -1;
+  };
 
   const handleChange = (newTargetKeys, direction, moveKeys) => {
     setTargetKeys(newTargetKeys);
