@@ -1,8 +1,23 @@
 [
   {
-    "code": "mat 141"
+    "code": "CSCI 274",
+    "name": "Computer Architecture",
+    "credits": 3,
+    "grade": "A",
+    "key": 1
   },
   {
-    "code": "sci 114"
+    "code": "MAT 151",
+    "name": "Calculus I",
+    "credits": 4,
+    "grade": "A",
+    "key": 2
+  },
+  {
+    "code": "SPA 101",
+    "name": "Introductory Spanish I",
+    "credits": 3,
+    "grade": "A",
+    "key": 3
   }
 ]

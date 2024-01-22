@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import mockData from './courses.json';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -9,40 +11,8 @@ import {Divider, Button, message, Upload, Transfer, Tag} from 'antd'
 
 function App() {
   //transfer selection
-  const [mockData, setMockData] = useState([]);
+  // const [mockData, setMockData] = useState([]);
   const [targetKeys, setTargetKeys] = useState([]);
-
-  const generateCourseCode = (index) => {
-    const prefixes = ['PHY', 'CSC', 'MTH', 'BIO', 'CHE'];
-    const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
-    const randomCode = Math.floor(Math.random() * 500) + 100;
-    const randomCredits = (Math.floor(Math.random() * 3) + 1).toFixed(2);
-    const randomGrade = getRandomGrade();
-    return `${randomPrefix} ${randomCode} - ${randomCredits} - ${randomGrade}`;
-  };
-
-  const getRandomGrade = () => {
-    const grades = ['A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'];
-    return grades[Math.floor(Math.random() * grades.length)];
-  };
-
-  const getMock = () => {
-    const tempMockData = [];
-    for (let i = 0; i < 20; i++) {
-      const courseCode = generateCourseCode(i);
-      const data = {
-        key: courseCode,
-        title: `${courseCode}`,
-        description: `Description of Course ${courseCode}`,
-      };
-      tempMockData.push(data);
-    }
-    setMockData(tempMockData);
-  };
-
-  useEffect(() => {
-    getMock();
-  }, []);
 
   const filterOption = (inputValue, option) =>
     option.description.indexOf(inputValue) > -1 || option.title.indexOf(inputValue) > -1;
@@ -117,7 +87,7 @@ function App() {
       targetKeys={targetKeys}
       onChange={handleChange}
       onSearch={handleSearch}
-      render={(item) => item.title}
+      render={(item) => `${item.code} - ${item.credits} - ${item.grade}`}
       listStyle={{
         width: 300,
         height: 300,
