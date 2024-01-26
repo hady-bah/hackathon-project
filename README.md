@@ -35,8 +35,8 @@ Many students face the challenge of displaying their major GPAs on their resumes
 
 - **Regular Expressions:** The main challenge was designing accurate regular expressions to extract data. Challenges included handling different formatting, special characters, and spaces. Patterns were adjusted to ensure recognition of potential variations.
 
-## What We Learned
+## What I Learned
 
-Building this project provided valuable learning experiences, particularly in the areas of optical character recognition and regular expressions. These skills have expanded our technical capabilities, and we plan to apply them in future projects.
+Building this project provided valuable learning experiences, particularly in the areas of optical character recognition and regular expressions. These skills have expanded my technical capabilities, and I plan to apply them in future projects.
 
 Feel free to try it out!
